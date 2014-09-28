@@ -1,46 +1,46 @@
 Rails.application.routes.draw do
 
-  get 'post/index'
+  get 'posts/index'
 
-  get 'post/create'
+  get 'posts/create'
 
-  get 'post/new'
+  get 'posts/new'
 
-  get 'post/edit'
+  get 'posts/edit'
 
-  get 'post/show'
+  get 'posts/show'
 
-  get 'post/update'
+  get 'posts/update'
 
-  get 'post/destroy'
+  get 'posts/destroy'
 
-  get 'administrator/index'
+  get 'administrators/index'
 
-  get 'administrator/create'
+  get 'administrators/create'
 
-  get 'administrator/new'
+  get 'administrators/new'
 
-  get 'administrator/edit'
+  get 'administrators/edit'
 
-  get 'administrator/show'
+  get 'administrators/show'
 
-  get 'administrator/update'
+  get 'administrators/update'
 
-  get 'administrator/destroy'
+  get 'administrators/destroy'
 
-  get 'contributor/index'
+  get 'contributors/index'
 
-  get 'contributor/create'
+  get 'contributors/create'
 
-  get 'contributor/new'
+  get 'contributors/new'
 
-  get 'contributor/edit'
+  get 'contributors/edit'
 
-  get 'contributor/show'
+  get 'contributors/show'
 
-  get 'contributor/update'
+  get 'contributors/update'
 
-  get 'contributor/destroy'
+  get 'contributors/destroy'
 
   resources :contributors
   resources :administrators
