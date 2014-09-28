@@ -1,2 +1,23 @@
-<h1>Contributors#index</h1>
-<p>Find me in app/views/contributors/index.html.erb</p>
+<h2>List of all Contributors</h2>
+
+<table class="table">
+
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Email</th>
+	</tr>
+
+<% @contributors.each do |contributor| %>
+
+<tr>
+
+	<td><%= contributor.id %></td>
+	<td><%= contributor.name %></td>
+	<td><%= contributor.email %></td>
+
+</tr>
+
+<% end %>
+
+</table>
