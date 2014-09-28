@@ -1,19 +1,30 @@
 class PostsController < ApplicationController
   def index
-  end
 
-  def create
-    @contributor = Contributor.find(params[:contributor_id])
+    if params[:contributor_id]
 
-    if @post = @contributor.posts.create(post_params)
-
-      redirect_to post_path(@post)
+      @posts = Post.all.order(created_at: :desc).where("contributor_id = ?", params[:contributor_id])
 
     else
 
-      render 'new'
+     @posts = Post.all.order(created_at: :desc)
 
-    end
+   end   
+
+ end
+
+ def create
+  @contributor = Contributor.find(params[:contributor_id])
+
+  if @post = @contributor.posts.create(post_params)
+
+    redirect_to post_path(@post)
+
+  else
+
+    render 'new'
+
+  end
 
     # @post = Post.new(post_params)
 
@@ -28,10 +39,19 @@ class PostsController < ApplicationController
   end
 
   def show
+
     @post = Post.find(params[:id])
 
     @contributor = Contributor.find(@post.contributor_id)
-    
+
+    # if params[:contributor_id]
+
+    #   render plain: "Contributor ID is defined."
+
+    # else
+    #   render plain: "Contributor ID is not defined"
+    # end
+
   end
 
   def update

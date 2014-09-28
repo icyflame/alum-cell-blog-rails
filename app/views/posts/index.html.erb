@@ -1,2 +1,36 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h2>List of all posts</h2>
+
+<% if params[:contributor_id] %>
+
+<h2> Written by <%= Contributor.find(params[:contributor_id]).name %>, ID <%= params[:contributor_id] %> </h2>
+
+<% end %>
+
+<table class="table">
+
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Tags</th>
+		<th>Contributor ID</th>
+		<th>Posted at</th>
+	</tr>
+
+	<% @posts.each do |post| %>
+
+	<tr>
+
+		<td><%= post.id %></td>
+		<td><%= post.title %></td>
+		<td><%= post.content %></td>
+		<td><%= post.tags %></td>
+		<td><%= post.contributor_id %></td>
+		<td><%= post.created_at %></td>
+
+
+	</tr>
+
+	<% end %>
+
+</table>
