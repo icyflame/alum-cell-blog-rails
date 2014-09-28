@@ -42,9 +42,13 @@ Rails.application.routes.draw do
 
   get 'contributors/destroy'
 
-  resources :contributors
-  resources :administrators
+  resources :contributors do
+    resources :posts
+  end
+
   resources :posts
+  resources :administrators
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
