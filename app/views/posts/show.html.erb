@@ -1,18 +1,38 @@
+<hr/>
+
 <h1> <%= @post.title %>
 
 </h1>
 
 <h4>
 	Posted by <%= @contributor.name %>, with contributor ID <%= @contributor.id %> at <%= @post.created_at %>
+
+	<!--
+
+	<% if @contributor.id == params[:contributor_id].to_i %>
+
+	<hr/>You have written this article.
+
+	<% end %> -->
+
+	<% # if @contributor.id == params[:contributor_id] %>
+	<% # if @contributor.id.equal?(params[:contributor_id]) %>
+
 </h4>
 
-<p>
+<hr/>
+
+<p style="font-size: 30px; ">
 	<%= @post.content %>
 </p>
+
+<hr/>
 
 <h4>
 	Tags: <%= @post.tags %>
 </h4>
+
+<hr/>
 
 <h2>
 
