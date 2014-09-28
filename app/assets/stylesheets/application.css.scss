@@ -23,6 +23,6 @@ html, body{
 	margin-top: 20px;
 }
 
-form input{
+form input, textarea{
 	@extend .form-control;
 }
