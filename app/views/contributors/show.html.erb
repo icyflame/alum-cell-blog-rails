@@ -9,3 +9,25 @@
 <h2 class="text-muted">
 	<%= @contributor.email %>
 </h2>
+
+<!-- Form for adding a post -->
+
+<%= form_for([@contributor, @contributor.posts.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :tags %><br>
+    <%= f.text_area :tags %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Contributors Home', contributors_path %>
