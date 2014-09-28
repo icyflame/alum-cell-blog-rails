@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Blog</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<div class="container">
+
+		<div class="row" style="text-align: center;">
+			<a href="<%= contributors_path %>"><button class="btn btn-primary">Contributors
+			</button>
+			</a>
+			<a href="<%= administrators_path %>"><button class="btn btn-primary">Administrators
+			</button>
+			</a>
+			<a href="<%= posts_path %>"><button class="btn btn-primary">Posts
+			</button>
+			</a>
+
+		</div>
+
+	</div>
+
+	<%= yield %>
 
 </body>
 </html>
