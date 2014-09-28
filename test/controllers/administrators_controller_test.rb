@@ -7,7 +7,8 @@ class AdministratorsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create
+    administrator = administrators(:one)
+    get :create, {:administrator => administrator.attributes}
     assert_response :success
   end
 
@@ -22,7 +23,8 @@ class AdministratorsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    administrator = administrators(:one)
+    get :show, { :id => administrator.id }
     assert_response :success
   end
 

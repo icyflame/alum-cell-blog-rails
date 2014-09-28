@@ -7,7 +7,9 @@ class ContributorsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create
+    contributor = contributors(:one)
+    # get :create, {:contributor => {:name => contributor.name, :email => contributor.email }}
+    get :create, {:contributor => contributor.attributes}
     assert_response :success
   end
 
@@ -22,7 +24,8 @@ class ContributorsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    contributor = contributors(:one)
+    get :show, {:id => contributor.id}
     assert_response :success
   end
 
