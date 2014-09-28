@@ -1,2 +1,30 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1> <%= @post.title %>
+
+</h1>
+
+<h4>
+	Posted by <%= @contributor.name %>, with contributor ID <%= @contributor.id %> at <%= @post.created_at %>
+</h4>
+
+<p>
+	<%= @post.content %>
+</p>
+
+<h4>
+	Tags: <%= @post.tags %>
+</h4>
+
+<h2>
+
+<% if @post.moderated %>
+
+Post has been moderated
+
+<% else %>
+
+Post has not yet been moderated
+
+<% end %>
+
+</h2>
+
