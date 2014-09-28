@@ -1,2 +1,51 @@
-<h1>Contributors#new</h1>
-<p>Find me in app/views/contributors/new.html.erb</p>
+<div class="container" style="float: left; ">
+
+	<div class="col-md-5">
+
+		<%= form_for :contributor, url: contributors_path do |f| %>
+
+		<% if defined? @contributor %>
+
+		<% if @contributor.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@contributor.errors.count, "error") %> prohibited
+				this contributor from being saved:
+			</h2>
+			<ul>
+				<% @contributor.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		<% end %>
+
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %>
+		</p>
+
+		<p>
+			<%= f.label :email_id %><br>
+			<%= f.text_field :email %>
+		</p>
+
+		<p>
+			<input type="submit" class="btn btn-success" value="Create Contributor">
+		</p>
+
+		<% end %>
+
+		<a href="<%= contributors_path %>">
+			<button class="btn btn-primary">
+				Back to Contributors Home
+			</button>
+		</a>
+
+	</div>
+
+	<div class="col-md-7">
+	</div>
+
+</div>
