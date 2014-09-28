@@ -6,18 +6,36 @@
 		<th>ID</th>
 		<th>Name</th>
 		<th>Email</th>
+		<th></th>
+		<th></th>
 	</tr>
 
-<% @contributors.each do |contributor| %>
+	<% @contributors.each do |contributor| %>
 
-<tr>
+	<tr>
 
-	<td><%= contributor.id %></td>
-	<td><%= contributor.name %></td>
-	<td><%= contributor.email %></td>
+		<td><%= contributor.id %></td>
+		<td><%= contributor.name %></td>
+		<td><%= contributor.email %></td>
+		<td>
+			<a href="<%= contributors_path %>/<%= contributor.id %>">
+				<button class="btn btn-success">
+					Show Contributor
+				</button>
+			</a>
+		</td>
 
-</tr>
+		<td>
+			<a href="<%= contributors_path %>/<%= contributor.id %>/posts/">
+				<button class="btn btn-success">
+					Posts by this contributor
+				</button>
+			</a>
+		</td>
 
-<% end %>
+
+	</tr>
+
+	<% end %>
 
 </table>
