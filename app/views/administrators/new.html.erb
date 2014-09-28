@@ -28,12 +28,19 @@
 
 		<p>
 			<%= f.label :email_id %><br>
-			<%= f.text_field :email %>
+			<%= f.text_field :email, :placeholder => 'john.doe@domain.com' %>
 		</p>
 
 		<p>
 			<%= f.label :designation %><br>
-			<%= f.text_field :designation %>
+
+			<select name="administrator[designation]">
+
+				<option value="5">Student Member</option>
+				<option value="5">Coordinator</option>
+
+			</select>
+
 		</p>
 
 		<p>
