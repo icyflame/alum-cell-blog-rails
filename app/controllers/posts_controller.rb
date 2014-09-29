@@ -33,6 +33,12 @@ class PostsController < ApplicationController
   end
 
   def new
+    if contributor_signed_in?
+      @contributor = current_contributor
+    else
+      flash[:alert] = "You need to be signed in as a contributor to add new posts."
+      redirect_to new_contributor_session_path
+    end
   end
 
   def edit
