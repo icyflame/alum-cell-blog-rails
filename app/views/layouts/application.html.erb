@@ -29,6 +29,38 @@
 					<li><a href="<%= posts_path %>">Posts</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+
+					<li class="dropdown">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<% if contributor_signed_in? %>
+							<%= current_contributor.name %>
+							<% else %>
+							Contributors Menu
+							<% end %>
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+
+							<% if contributor_signed_in? %>
+
+							<li><a href="<%= contributors_path %>/<%= current_contributor.id %>">Show Profile</a></li>
+
+							<li><a href="<%= edit_contributor_registration_path %>">Edit Profile</a></li>
+
+							<li>
+								<%= link_to "Sign out", destroy_contributor_session_path, :method => :delete %>
+							</li>
+
+							<% else %>
+
+							<li><a href="<%= new_contributor_registration_path %>">Sign up</a></li>
+							<li><a href="<%= contributor_session_path %>">Sign in</a></li>
+
+							<% end %>
+
+						</ul>
+					</li>
 					<li class="dropdown">
 
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -66,8 +98,8 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<p class="notice" role="alert"><%= notice %></p>
+	<p class="alert" role="alert"><%= alert %></p>
 
 	<%= yield %>
 
