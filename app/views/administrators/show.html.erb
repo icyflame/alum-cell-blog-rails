@@ -13,3 +13,10 @@
 <h3>
 	Designation level <%= @administrator.designation %>
 </h3>
+
+<% if !@administrator.verified %>
+
+<h3> Administrator not yet verified </h3>
+
+<% end %>
+
