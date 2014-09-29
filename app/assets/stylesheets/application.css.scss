@@ -25,4 +25,6 @@ html, body{
 
 form input, textarea{
 	@extend .form-control;
+	margin-top: 10px; 
+	margin-bottom: 10px; 
 }
