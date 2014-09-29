@@ -15,8 +15,9 @@
 		<th>Title</th>
 		<th>Content</th>
 		<th>Tags</th>
-		<th>Contributor ID</th>
+		<th>written by</th>
 		<th>Posted at</th>
+		<th></th>
 	</tr>
 
 	<% @posts.each do |post| %>
@@ -27,8 +28,19 @@
 		<td><%= post.title %></td>
 		<td><%= post.content %></td>
 		<td><%= post.tags %></td>
-		<td><%= post.contributor_id %></td>
+		<td>
+			<a href="<%= contributors_path %>/<%= post.contributor_id %>">
+				<%= Contributor.find(post.contributor_id).name %>
+			</a>
+		</td>
 		<td><%= post.created_at %></td>
+		<td>
+			<a href="<%= posts_path %>/<%= post.id %>">
+				<button class="btn btn-info">
+					See Post
+				</button>
+			</a>
+		</td>
 
 
 	</tr>
