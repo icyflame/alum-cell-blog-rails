@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/sepsiddharth', as: 'rails_admin'
   devise_for :contributors
   devise_for :administrators
   get 'posts/index'
@@ -47,6 +48,9 @@ Rails.application.routes.draw do
   resources :contributors do
     resources :posts
   end
+
+  get 'administrators/verify' => 'administrators#verify'
+  post 'administrators/verify_administrator' => 'administrators#verify_token'
 
   resources :posts
   resources :administrators
