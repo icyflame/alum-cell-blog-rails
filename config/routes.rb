@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :contributors
   devise_for :administrators
   get 'posts/index'
 
