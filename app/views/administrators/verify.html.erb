@@ -1,0 +1,8 @@
+<h2>Verify that you are an administrator</h2>
+
+<%= form_for :administrator, url: administrators_verify_administrator_path do |f|%>
+
+	<input type="string" name="verificationstring"></input>
+	<input type="submit">
+
+<% end %>
