@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 # custom
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'devise'

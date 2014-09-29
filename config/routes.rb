@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :contributors
+  devise_for :administrators
   get 'posts/index'
 
   get 'posts/create'
@@ -48,6 +50,8 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :administrators
+
+  root 'posts#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
