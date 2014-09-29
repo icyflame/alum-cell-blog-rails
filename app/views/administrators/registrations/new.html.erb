@@ -1,7 +1,24 @@
-<h2>Sign up</h2>
+<h2>Sign up as an Administrator</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
+
+<div>
+	<%= f.label :name %><br>
+	<%= f.text_field :name, autofocus: true %>
+</div>
+
+<div>
+	<%= f.label :designation %><br>
+
+	<select name="administrator[designation]">
+
+		<option value="5">Student Member</option>
+		<option value="1">Coordinator</option>
+
+	</select>
+
+</div>
 
 <div>
 	<%= f.label :email %><br />
@@ -19,7 +36,7 @@
 <br/>
 
 <div>
-	<input type="submit" class="btn btn-success" value="Create">
+	<input type="submit" class="btn btn-success" value="Create Administrator">
 </div>
 <% end %>
 

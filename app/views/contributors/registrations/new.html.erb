@@ -1,7 +1,12 @@
-<h2>Sign up</h2>
+<h2>Sign up as a Contributor</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
+
+<div>
+	<%= f.label :name %><br>
+	<%= f.text_field :name, autofocus: true %>
+</div>
 
 <div>
 	<%= f.label :email %><br />
@@ -19,7 +24,7 @@
 <br/>
 
 <div>
-	<input type="submit" class="btn btn-success" value="Create">
+	<input type="submit" class="btn btn-success" value="Create Contributor">
 </div>
 <% end %>
 
