@@ -4,6 +4,7 @@ class CreateAdministrators < ActiveRecord::Migration
       t.string :name
       # t.string :email
       t.integer :designation
+      t.boolean :verified
 
       t.timestamps
     end
