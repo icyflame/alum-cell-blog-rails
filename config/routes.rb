@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  mount RailsAdmin::Engine => '/sepsiddharth', as: 'rails_admin'
+  # mount RailsAdmin::Engine => '/sepsiddharth', as: 'rails_admin'
   devise_for :contributors
   devise_for :administrators
   get 'posts/index'
