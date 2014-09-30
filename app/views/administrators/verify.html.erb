@@ -1,0 +1,17 @@
+<h2>Verify that you are an administrator
+</h2>
+
+<h3>
+	Once we verify your identity, we will send you an email, consisting a verification code.<br/>
+	<span class="text-muted">If you haven't recieved any email from us, then we have not yet had a look at your account.<br/>
+		So, hold tight! And we will get to you soon!
+	</span>
+
+</h3>
+
+<%= form_for :administrator, url: administrators_verify_administrator_path do |f|%>
+
+	<input type="string" name="verificationstring" placeholder="Verification string"></input>
+	<input type="submit">
+
+<% end %>
