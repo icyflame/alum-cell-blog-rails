@@ -21,5 +21,16 @@ class AdministratorsController < ApplicationController
 
   def verify
   end
+
+  def moderate_content
+    if administrator_signed_in?
+      if current_administrator.verified
+        temp = Post.find(params[:post])
+        temp.moderated = !temp.moderated
+        temp.save
+        redirect_to temp
+      end
+    end
+  end
   
 end
