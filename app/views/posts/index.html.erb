@@ -10,41 +10,57 @@
 
 <table class="table">
 
-	<tr>
-		<th>ID</th>
-		<th>Title</th>
-		<th>Content</th>
-		<th>Tags</th>
-		<th>written by</th>
-		<th>Posted at</th>
-		<th></th>
-	</tr>
+	<thead>
 
-	<% @posts.each do |post| %>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Content</th>
+			<th>Tags</th>
+			<th>written by</th>
+			<th>Posted at</th>
+			<th></th>
+		</tr>
 
-	<tr>
+	</thead>
 
-		<td><%= post.id %></td>
-		<td><%= post.title %></td>
-		<td><%= post.content %></td>
-		<td><%= post.tags %></td>
-		<td>
-			<a href="<%= contributors_path %>/<%= post.contributor_id %>">
-				<%= Contributor.find(post.contributor_id).name %>
-			</a>
-		</td>
-		<td><%= post.created_at %></td>
-		<td>
-			<a href="<%= posts_path %>/<%= post.id %>">
-				<button class="btn btn-info">
-					See Post
-				</button>
-			</a>
-		</td>
+	<tbody>
+
+		<% @posts.each do |post| %>
+
+		<% if post.moderated %>
+
+		<tr class="success">
+
+			<% else %>
+
+			<tr class="danger">
+
+				<% end %>
 
 
-	</tr>
+				<td><%= post.id %></td>
+				<td><%= post.title %></td>
+				<td><%= post.content %></td>
+				<td><%= post.tags %></td>
+				<td>
+					<a href="<%= contributors_path %>/<%= post.contributor_id %>">
+						<%= Contributor.find(post.contributor_id).name %>
+					</a>
+				</td>
+				<td><%= post.created_at %></td>
+				<td>
+					<a href="<%= posts_path %>/<%= post.id %>">
+						<button class="btn btn-info">
+							See Post
+						</button>
+					</a>
+				</td>
 
-	<% end %>
+			</tr>
 
-</table>
+			<% end %>
+
+		</tbody>
+
+	</table>

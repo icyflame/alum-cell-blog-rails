@@ -9,3 +9,9 @@
 <h2 class="text-muted">
 	<%= @contributor.email %>
 </h2>
+
+<a href="<%= contributors_path %>/<%= @contributor.id %>/posts/">
+	<button class="btn btn-success">
+		Posts by this contributor
+	</button>
+</a>

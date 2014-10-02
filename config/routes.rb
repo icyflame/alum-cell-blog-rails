@@ -45,12 +45,14 @@ Rails.application.routes.draw do
 
   get 'contributors/destroy'
 
+  get 'administrators/verify' => 'administrators#verify'
+  post 'administrators/verify_administrator' => 'administrators#verify_token'
+
+  delete 'administrators/moderate' => 'administrators#moderate_content'
+
   resources :contributors do
     resources :posts
   end
-
-  get 'administrators/verify' => 'administrators#verify'
-  post 'administrators/verify_administrator' => 'administrators#verify_token'
 
   resources :posts
   resources :administrators

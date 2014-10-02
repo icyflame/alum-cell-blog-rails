@@ -36,21 +36,57 @@
 
 <h2>
 
-<% if @post.moderated %>
+	<% if @post.moderated %>
 
-Post has been moderated
+	Post has been moderated
 
-<% else %>
+	<% else %>
 
-Post has not yet been moderated
+	Post has not yet been moderated
 
-<% end %>
-
-<a href="<%= contributors_path %>/<%= @contributor.id %>/posts">
-	<button class="btn btn-primary">
-		See more from this contributor
-	</button>
-</a>
+	<% end %>
 
 </h2>
+
+<h3>
+
+	<% if administrator_signed_in? %>
+	<% if current_administrator.verified %>
+
+	<span class="text-muted">
+
+		As a verified administrator, you can moderate the content of this post. If you believe that this is quality content, then click the link below, and the post will go online, on your firm's blog.
+
+	</span>
+	<br/>
+	<br/>
+
+	<%= form_for :administrator, url: administrators_moderate_path, method: :delete, data: {confirm: "Are you sure?"} do |f| %>
+
+		<input type="text" name="post" value="<%= @post.id %>" style="display: none; ">
+
+		<% if @post.moderated %>
+			<button class="btn btn-danger" type="submit">
+				Rollback
+		<% else %>
+			<button class="btn btn-success" type="submit">
+				Accept Post
+		<% end %>
+
+	</button>
+
+	<% end %> <!--/ end form_for -->
+
+	<% end %> <!-- End verified_administrator -->
+	<% end %> <!-- End administrator signed_in -->
+
+	<br/>
+
+	<a href="<%= contributors_path %>/<%= @contributor.id %>/posts">
+		<button class="btn btn-primary">
+			See more from this contributor
+		</button>
+	</a>
+
+</h3>
 
