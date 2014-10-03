@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :maintainers, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # mount RailsAdmin::Engine => '/sepsiddharth', as: 'rails_admin'
   devise_for :contributors
   devise_for :administrators
