@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/icyflame/alum-cell-blog-rails.svg?branch=master)](https://travis-ci.org/icyflame/alum-cell-blog-rails)
-
-# Alumni Cell Blogging Prototype.
+# Alumni Cell Blogging Prototype. [![Build Status](https://travis-ci.org/icyflame/create-together-rails.svg?branch=master)](https://travis-ci.org/icyflame/create-together-rails)
 
 This is the prototype of a custom blogging framework, to be used by SAC IIT Kharagpur.
 
