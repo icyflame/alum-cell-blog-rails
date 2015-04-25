@@ -1,7 +1,10 @@
-# Alumni Cell Blogging Prototype. [![Build Status](https://travis-ci.org/icyflame/create-together-rails.svg?branch=master)](https://travis-ci.org/icyflame/create-together-rails)
+# Create Together [![Build Status](https://travis-ci.org/icyflame/create-together-rails.svg?branch=master)](https://travis-ci.org/icyflame/create-together-rails)
 
-This is the prototype of a custom blogging framework, to be used by SAC IIT Kharagpur.
+### Caters to the control freak inside you
+A custom blogging framework. Post moderation are first rate citizens in this project.
+
+Built to be used by the Students' Alumni Cell, IIT Kharagpur.
 
 Code is licensed under MIT.
 
-Copyright 2014 Siddharth Kannan.
+Copyright 2015 Siddharth Kannan.
